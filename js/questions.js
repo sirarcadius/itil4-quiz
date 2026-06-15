@@ -1662,6 +1662,564 @@ const QUESTIONS = [
     explanation: "Uma oferta de serviço pode combinar bens (cuja posse pode ser transferida), acesso a recursos (sob termos acordados) e ações de serviço executadas para o consumidor.",
     trap: "Não é só 'um produto': a oferta mistura bens, acesso e ações — e cada um tem regras diferentes.",
     trigger: "Offering = Bens + Acesso a recursos + Ações de serviço."
+  },
+
+  /* ==========================================================================
+   *  LOTE 3 — SIMULADO (40 questões estilo prova — originais baseadas no syllabus)
+   * ======================================================================== */
+
+  /* -------- SERVICE DESK / PRACTICES -------- */
+  {
+    id: "pra-30",
+    topic: TOPICS.PRA,
+    question: "Qual é o propósito da prática de 'Service Desk' segundo o ITIL 4?",
+    options: [
+      "Investigar a causa-raiz de todos os problemas reportados",
+      "Aprovar mudanças normais e emergenciais",
+      "Negociar contratos com fornecedores externos",
+      "Capturar a demanda por resolução de incidentes e requisições, sendo o ponto único de contato com os usuários"
+    ],
+    correct: 3,
+    explanation: "O Service Desk é o SPOC (ponto único de contato) entre o provedor e todos os usuários, capturando incidentes e requisições de serviço.",
+    trap: "O Service Desk não investiga causa-raiz (isso é Problem Management) nem aprova mudanças (Change Enablement).",
+    trigger: "Service Desk = SPOC + capturar incidentes e requisições."
+  },
+  {
+    id: "pra-31",
+    topic: TOPICS.PRA,
+    question: "Quais são as três fases da prática de Gerenciamento de Problemas no ITIL 4?",
+    options: [
+      "Resolução de Problemas, Solução de Problemas, Erradicação de Problemas",
+      "Identificação de Problemas, Controle de Problemas, Controle de Erros",
+      "Resistência a Problemas, Recuperação de Problemas, Correção de Problemas",
+      "Revisão de Problemas, Identificação de Problemas, Análise de Problemas"
+    ],
+    correct: 1,
+    explanation: "As três fases são: Identificação do problema (detectar e registrar), Controle do problema (analisar e priorizar) e Controle de erros (gerir erros conhecidos e workarounds).",
+    trap: "Resolução definitiva pode não ocorrer: o controle de erros lida com erros conhecidos e workarounds enquanto a solução permanente não está disponível.",
+    trigger: "Problema: Identificar → Controlar → Controlar Erro."
+  },
+  {
+    id: "pra-32",
+    topic: TOPICS.PRA,
+    question: "A equipe de Service Desk precisa de treinamento especialmente em quais habilidades de atendimento ao cliente?",
+    options: [
+      "Empatia, análise de incidentes, priorização, comunicação eficaz e inteligência emocional",
+      "Socialização, categorização, priorização, análise de conflitos e análise de causa raiz",
+      "Avaliação de mudanças, revisões de grandes problemas, reuniões de revisão de serviço e gestão de fornecedores",
+      "Análise de métricas, gestão do tempo, negociação e liderança de equipe"
+    ],
+    correct: 0,
+    explanation: "O ITIL 4 destaca empatia, comunicação eficaz e inteligência emocional como habilidades-chave do Service Desk, além de capacidade técnica de analisar e priorizar incidentes.",
+    trap: "Análise de causa raiz não é papel do Service Desk — é do Problem Management. Foco do SD é na experiência do usuário.",
+    trigger: "SD: empatia + comunicação + inteligência emocional (não só técnica)."
+  },
+  {
+    id: "pra-33",
+    topic: TOPICS.PRA,
+    question: "A prática de Gerenciamento de Incidentes deve ser gerenciada:",
+    options: [
+      "Com resolução imediata obrigatória de todos os incidentes",
+      "Exigindo causa definida antes de encerrar qualquer incidente",
+      "Conforme metas acordadas e realistas de resolução",
+      "Com prazo fixo de 4 horas para todos os incidentes"
+    ],
+    correct: 2,
+    explanation: "O Gerenciamento de Incidentes deve seguir metas acordadas com o negócio e realistas — não há prazo único para todos os incidentes.",
+    trap: "Nem todo incidente precisa de causa definida (isso é problema). A meta de tempo varia por impacto e urgência.",
+    trigger: "Incidente = gerir conforme metas acordadas e realistas."
+  },
+  {
+    id: "pra-34",
+    topic: TOPICS.PRA,
+    question: "Quem pode encerrar formalmente um incidente no ITIL 4?",
+    options: [
+      "Alta gestão da organização",
+      "Líder técnico da equipe de infraestrutura",
+      "O consumidor/usuário do serviço",
+      "Exclusivamente o Service Desk"
+    ],
+    correct: 2,
+    explanation: "O consumidor é quem valida que o serviço foi restaurado satisfatoriamente; é ele quem deve confirmar o encerramento do incidente.",
+    trap: "O Service Desk pode operar o fechamento administrativo, mas a validação final é do consumidor — afinal, o valor é percebido por ele.",
+    trigger: "Quem fecha o incidente = o CONSUMIDOR (quem usa o serviço)."
+  },
+  {
+    id: "pra-35",
+    topic: TOPICS.PRA,
+    question: "Qual prática tem como propósito 'proteger as informações necessárias para o negócio'?",
+    options: [
+      "Gestão de Configuração de Serviço",
+      "Gestão de Obter/Construir",
+      "Gestão de Ativos de TI",
+      "Gestão de Segurança da Informação"
+    ],
+    correct: 3,
+    explanation: "Information Security Management protege a informação do negócio, gerenciando riscos de confidencialidade, integridade e disponibilidade.",
+    trap: "Gestão de Ativos cuida do ciclo de vida dos ativos, não da proteção da informação. São práticas distintas.",
+    trigger: "Segurança da Informação = proteger info do negócio (C-I-D)."
+  },
+  {
+    id: "pra-36",
+    topic: TOPICS.PRA,
+    question: "O propósito da prática de Gestão de Releases é:",
+    options: [
+      "Proteger informações sensíveis do negócio",
+      "Gerenciar projetos de TI do início ao fim",
+      "Observar e reportar eventos na infraestrutura",
+      "Disponibilizar serviços novos e alterados para uso"
+    ],
+    correct: 3,
+    explanation: "Release Management tem como propósito tornar disponíveis para uso os serviços e funcionalidades novas ou modificadas.",
+    trap: "Não confunda com Deployment (mover componentes para ambiente). Release = liberar para USO do consumidor.",
+    trigger: "Release = disponibilizar para uso (não é só mover para produção)."
+  },
+  {
+    id: "pra-37",
+    topic: TOPICS.PRA,
+    question: "O propósito da prática de Gestão de Requisições de Serviço é:",
+    options: [
+      "Gerenciar o relacionamento com stakeholders estratégicos",
+      "Fazer o design de novos serviços de TI",
+      "Elaborar ofertas de serviço ao cliente",
+      "Tratar requisições de serviço de forma eficaz e amigável ao usuário"
+    ],
+    correct: 3,
+    explanation: "Service Request Management trata pedidos previsíveis, padronizados e iniciados pelo usuário de forma eficiente e com boa experiência.",
+    trap: "Requisição não é incidente (falha) nem mudança de alto risco. É um pedido normal e esperado.",
+    trigger: "Gestão de Requisições = pedido normal, eficaz e amigável."
+  },
+  {
+    id: "pra-38",
+    topic: TOPICS.PRA,
+    question: "Qual é o modelo ideal de perfil de habilidade recomendado para profissionais de Service Desk no ITIL 4?",
+    options: [
+      "U-Shaped (especialização profunda em dois campos)",
+      "T-Shaped (profundidade em uma área + amplitude em várias)",
+      "I-Shaped (especialização total em um único domínio)",
+      "Ship-Shaped (habilidades distribuídas horizontalmente sem profundidade)"
+    ],
+    correct: 1,
+    explanation: "O perfil T-Shaped é o recomendado: o profissional tem profundidade em sua área de especialidade e ao mesmo tempo conhecimento amplo em outras áreas para colaborar melhor.",
+    trap: "I-Shaped (especialista puro) é limitado para o Service Desk que precisa de versatilidade; T-Shaped equilibra profundidade e amplitude.",
+    trigger: "T-Shaped = fundo numa coisa + largo em muitas."
+  },
+  {
+    id: "pra-39",
+    topic: TOPICS.PRA,
+    question: "Qual prática planeja e gerencia o ciclo de vida completo dos ativos de TI?",
+    options: [
+      "Gestão de Ativos de TI",
+      "Gestão de Configuração de Serviço",
+      "Planejar e Engajar",
+      "Gestão de Parceiros e Fornecedores"
+    ],
+    correct: 0,
+    explanation: "IT Asset Management cobre todo o ciclo de vida dos ativos (aquisição, uso, reuso, aposentadoria/descarte), maximizando valor e controlando custo e risco.",
+    trap: "Gestão de Configuração cuida das informações sobre relacionamentos entre CIs, não do ciclo de vida financeiro/físico dos ativos.",
+    trigger: "ITAM = ciclo de vida completo do ativo de TI."
+  },
+  {
+    id: "pra-40",
+    topic: TOPICS.PRA,
+    question: "Quais são os canais pelos quais o Service Desk pode ser acessado pelos usuários?",
+    options: [
+      "Telefone, canais de mídia social e presencial (local)",
+      "Telefone, canais de mídia social e reclamações a fornecedores",
+      "Telefone, presencial e reclamações a fornecedores",
+      "Mídia social, presencial e reclamações a fornecedores"
+    ],
+    correct: 0,
+    explanation: "O Service Desk pode ser acessado por múltiplos canais: telefone, portais, e-mail, chat, mídia social e atendimento presencial — mas reclamações a fornecedores não é um canal de acesso ao SD.",
+    trap: "Reclamação a fornecedores não é canal do Service Desk; é uma atividade de Gestão de Fornecedores.",
+    trigger: "Canais do SD: telefone + social + presencial + outros (não fornecedor)."
+  },
+  {
+    id: "pra-41",
+    topic: TOPICS.PRA,
+    question: "Sobre a prática de Gestão de Requisições de Serviço, qual afirmação é correta?",
+    options: [
+      "Não envolve a atividade Obtain/Build da SVC",
+      "Contribui exclusivamente para a atividade Design da SVC",
+      "Contribui somente para a atividade Improve da SVC",
+      "Pode exigir aquisição de itens pré-aprovados conforme a oferta de serviço"
+    ],
+    correct: 3,
+    explanation: "A gestão de requisições pode envolver a aquisição de componentes ou itens pré-aprovados (ex.: novo notebook para colaborador), ligando-se à atividade Obtain/Build da SVC.",
+    trap: "Requisição não é exclusivamente operacional: algumas envolvem obtenção de recursos, conectando-se a Obtain/Build.",
+    trigger: "Requisição pode puxar Obtain/Build quando envolve aquisição pré-aprovada."
+  },
+  {
+    id: "pra-42",
+    topic: TOPICS.PRA,
+    question: "Qual é a definição de 'evento' no contexto da prática de Monitoramento e Gestão de Eventos?",
+    options: [
+      "Qualquer mudança relevante na cadeia de valor de serviço",
+      "Uma mudança de estado relevante para a gestão de um serviço ou item de configuração",
+      "Qualquer alteração no SVS que afete a governança",
+      "Uma mudança no valor percebido pelo cliente"
+    ],
+    correct: 1,
+    explanation: "Evento é qualquer mudança de estado que seja relevante para a gestão de um serviço ou CI — pode ser informativo, de alerta ou de exceção.",
+    trap: "Não confunda evento com incidente: o evento é a mudança de estado detectada; o incidente é o evento que interrompe o serviço.",
+    trigger: "Evento = mudança de estado relevante para o serviço ou CI."
+  },
+
+  /* -------- SERVICE MANAGEMENT CONCEPTS -------- */
+  {
+    id: "smc-14",
+    topic: TOPICS.SMC,
+    question: "Qual é o tipo de modelo que descreve o Service Value System (SVS)?",
+    options: [
+      "Modelo de interpretação regulatória",
+      "Modelo operacional",
+      "Modelo organizacional hierárquico",
+      "Modelo de recursos humanos"
+    ],
+    correct: 1,
+    explanation: "O SVS é um modelo operacional que descreve como todos os componentes e atividades trabalham juntos para criar valor.",
+    trap: "Não é um modelo apenas organizacional ou hierárquico: o SVS é operacional — mostra o funcionamento integrado, não a estrutura de cargos.",
+    trigger: "SVS = modelo OPERACIONAL (como tudo funciona junto)."
+  },
+  {
+    id: "smc-15",
+    topic: TOPICS.SMC,
+    question: "Qual é a definição de 'organização' segundo o ITIL 4?",
+    options: [
+      "Uma equipe temporária criada para um projeto específico",
+      "Uma função exercida por uma única pessoa",
+      "Um processo documentado de entrega de serviços",
+      "Uma pessoa ou grupo com funções próprias, responsabilidades, autoridades e relações para atingir objetivos"
+    ],
+    correct: 3,
+    explanation: "Organização é definida como uma pessoa ou grupo que tem funções próprias com responsabilidades, autoridades e relações para alcançar seus objetivos.",
+    trap: "Organização no ITIL 4 não é sinônimo de empresa: pode ser uma equipe, departamento ou até uma pessoa com função definida.",
+    trigger: "Organização = papéis + responsabilidades + autoridades + relações."
+  },
+  {
+    id: "smc-16",
+    topic: TOPICS.SMC,
+    question: "O valor (value) no ITIL 4 é melhor caracterizado como:",
+    options: [
+      "Subjetivo e influenciado por fatores como custo, percepção, experiência, velocidade, facilidade de uso e segurança",
+      "Puramente objetivo e medido exclusivamente em termos financeiros",
+      "Criado e entregue somente pelo provedor de serviço",
+      "Responsabilidade exclusiva do cliente definir e comunicar"
+    ],
+    correct: 0,
+    explanation: "Valor é subjetivo — depende da percepção do stakeholder e é influenciado por múltiplos fatores. É cocriado entre provedor e consumidor.",
+    trap: "Valor não é objetivo nem unilateral: é a PERCEPÇÃO do stakeholder, influenciada por muitos fatores, e cocriado entre as partes.",
+    trigger: "Valor = subjetivo + cocriado (percepção é do consumidor)."
+  },
+  {
+    id: "smc-17",
+    topic: TOPICS.SMC,
+    question: "O que é uma 'relação de serviço' (service relationship) no ITIL 4?",
+    options: [
+      "Uma amizade informal entre equipes de TI",
+      "Um entendimento tácito entre usuários sobre como usar o sistema",
+      "Um contrato de terceirização com cláusulas de penalidade",
+      "Uma cooperação entre provedor e consumidor de serviço"
+    ],
+    correct: 3,
+    explanation: "A relação de serviço é a cooperação entre provedor e consumidor, envolvendo provisão, consumo e gestão da relação para cocriar valor.",
+    trap: "Não é só um contrato formal: é uma cooperação ativa e contínua entre as partes.",
+    trigger: "Relação de serviço = cooperação provedor ↔ consumidor."
+  },
+  {
+    id: "smc-18",
+    topic: TOPICS.SMC,
+    question: "'Consumo de Serviço' é definido como:",
+    options: [
+      "Atividades realizadas pelo provedor para fornecer serviços",
+      "Atividades realizadas pelo provedor para construir serviços",
+      "Atividades realizadas pelo consumidor para receber e utilizar serviços",
+      "Atividades realizadas pelo provedor para produzir componentes"
+    ],
+    correct: 2,
+    explanation: "Consumo de serviço refere-se às atividades do lado do consumidor: gerenciar recursos de consumo, uso dos serviços e solicitação de ações de serviço.",
+    trap: "Fornecer e construir são atividades do provedor. Consumo é o que o CONSUMIDOR faz com o serviço.",
+    trigger: "Consumo = o que o consumidor faz (não o provedor)."
+  },
+  {
+    id: "smc-19",
+    topic: TOPICS.SMC,
+    question: "No ITIL 4, 'garantia' (warranty) de um serviço é definida como:",
+    options: [
+      "A funcionalidade entregue pelo serviço ao consumidor",
+      "A garantia de que um produto ou serviço atenderá aos requisitos acordados",
+      "Uma oferta comercial de serviço ao cliente",
+      "O contrato de gestão de ativos da organização"
+    ],
+    correct: 1,
+    explanation: "Warranty é a garantia de que o serviço atenderá aos requisitos acordados — ou seja, o quão bem ele desempenha (disponibilidade, capacidade, segurança, continuidade).",
+    trap: "A funcionalidade é 'utility'. Warranty é sobre o DESEMPENHO e a confiabilidade do serviço.",
+    trigger: "Warranty = garantia de que atende aos requisitos (fitness for use)."
+  },
+  {
+    id: "smc-20",
+    topic: TOPICS.SMC,
+    question: "Sobre riscos no ITIL 4, qual afirmação é correta?",
+    options: [
+      "Riscos nunca podem ser evitados em serviços de TI",
+      "Riscos devem sempre ser completamente eliminados",
+      "Riscos são sempre eventos negativos para a organização",
+      "Riscos podem representar tanto ameaças quanto oportunidades para a organização"
+    ],
+    correct: 3,
+    explanation: "O ITIL 4 reconhece que risco é incerteza de resultado: pode ser negativo (ameaça) ou positivo (oportunidade). Gerenciar risco inclui ambas as perspectivas.",
+    trap: "A visão tradicional vê risco apenas como negativo, mas o ITIL 4 alinha-se às melhores práticas de gestão de riscos, que incluem oportunidades.",
+    trigger: "Risco = incerteza: pode ser ameaça OU oportunidade."
+  },
+  {
+    id: "smc-21",
+    topic: TOPICS.SMC,
+    question: "'Gestão de serviços' é definida como:",
+    options: [
+      "Um sistema de integração de aplicações e monitoramento (SIAM)",
+      "Capacidades organizacionais especializadas para gerar valor para clientes na forma de serviços",
+      "As atividades que o consumidor realiza para utilizar os serviços",
+      "As atividades de provisão de serviços pelo provedor"
+    ],
+    correct: 1,
+    explanation: "Gestão de serviços é o conjunto de capacidades organizacionais especializadas — pessoas, processos, tecnologia — que permitem gerar valor na forma de serviços.",
+    trap: "Não é um sistema ou ferramenta: é um conjunto de CAPACIDADES organizacionais para gerar valor.",
+    trigger: "Gestão de serviços = capacidades especializadas para gerar valor."
+  },
+  {
+    id: "smc-22",
+    topic: TOPICS.SMC,
+    question: "No contexto de papéis do consumidor de serviço, como eles se relacionam corretamente?",
+    options: [
+      "Usuário define requisitos; Consumidor autoriza orçamento; Sponsor usa o serviço; Cliente é papel genérico",
+      "Usuário é papel genérico; Sponsor autoriza orçamento; Consumidor define requisitos; Cliente usa o serviço",
+      "Usuário usa o serviço; Consumidor é papel genérico; Sponsor autoriza orçamento; Cliente define requisitos",
+      "Usuário usa o serviço; Consumidor autoriza orçamento; Sponsor é papel genérico; Cliente define requisitos"
+    ],
+    correct: 2,
+    explanation: "Usuário (usa o serviço), Consumidor (papel genérico que engloba os demais), Sponsor (autoriza orçamento) e Cliente (define requisitos e resultados esperados).",
+    trap: "A pegadinha está em trocar Cliente com Consumidor. Consumidor é o papel GENÉRICO; Cliente é o que define o que quer.",
+    trigger: "Usuário=usa · Consumidor=genérico · Sponsor=paga · Cliente=define."
+  },
+  {
+    id: "smc-23",
+    topic: TOPICS.SMC,
+    question: "Em qual atividade da SVC o envolvimento com stakeholders externos é sempre necessário?",
+    options: [
+      "Plan",
+      "Improve",
+      "Obtain/Build",
+      "Engage"
+    ],
+    correct: 3,
+    explanation: "'Engage' é a atividade da SVC que sempre envolve lidar com stakeholders externos — clientes, usuários, parceiros e fornecedores.",
+    trap: "Plan e Improve também se conectam a stakeholders, mas Engage é especificamente sobre relacionamento e captura de necessidades com partes externas.",
+    trigger: "Stakeholders externos = sempre 'Engage'."
+  },
+  {
+    id: "smc-24",
+    topic: TOPICS.SMC,
+    question: "'Outcome' (resultado) no ITIL 4 é definido como:",
+    options: [
+      "Uma conquista interna da equipe de TI",
+      "A garantia contratual do serviço",
+      "O resultado obtido por um stakeholder, habilitado por uma ou mais saídas (outputs)",
+      "A oferta de serviço disponível no catálogo"
+    ],
+    correct: 2,
+    explanation: "Outcome é o resultado gerado para um stakeholder por meio de um ou mais outputs — é o que o consumidor efetivamente ganha com o serviço.",
+    trap: "Output é o que se entrega; outcome é o que o stakeholder CONSEGUE graças a essa entrega. São conceitos distintos.",
+    trigger: "Outcome = resultado para o stakeholder (habilitado pelos outputs)."
+  },
+  {
+    id: "smc-25",
+    topic: TOPICS.SMC,
+    question: "'Disponibilidade' (availability) no ITIL 4 é definida como:",
+    options: [
+      "A performance máxima alcançada pelo serviço",
+      "A capacidade de operar o serviço quando necessário",
+      "A segurança das informações do serviço",
+      "Um ativo de TI gerenciado pela organização"
+    ],
+    correct: 1,
+    explanation: "Disponibilidade é a capacidade de um serviço, componente ou CI de funcionar quando requerido — é um elemento da warranty.",
+    trap: "Não confunda com performance (velocidade) ou segurança: disponibilidade é sobre estar OPERACIONAL quando necessário.",
+    trigger: "Disponibilidade = capacidade de operar quando for preciso."
+  },
+
+  /* -------- SVS / SVC -------- */
+  {
+    id: "svs-11",
+    topic: TOPICS.SVS,
+    question: "Qual é o gatilho das atividades dentro do Service Value System (SVS)?",
+    options: [
+      "Requisição formal de serviço",
+      "Contrato firmado com terceiros",
+      "Desenvolvimento de nova funcionalidade de TI",
+      "Oportunidade e demanda"
+    ],
+    correct: 3,
+    explanation: "As entradas (gatilhos) do SVS são oportunidade e demanda; o SVS as processa e gera valor como saída.",
+    trap: "Requisição de serviço é uma forma de demanda, mas o gatilho genérico do SVS é 'oportunidade e demanda', não apenas requisições.",
+    trigger: "Gatilho do SVS = oportunidade + demanda."
+  },
+  {
+    id: "svs-12",
+    topic: TOPICS.SVS,
+    question: "Quais são os componentes do Service Value System (SVS)?",
+    options: [
+      "Plan, Improve, Engage, Design, Obtain, Deliver",
+      "Princípios orientadores, Governança, Cadeia de valor de serviço, Práticas e Melhoria contínua",
+      "Gerenciamento de serviços, Gerenciamento técnico, Gerenciamento geral",
+      "Disponibilidade, Capacidade, Segurança, Continuidade"
+    ],
+    correct: 1,
+    explanation: "O SVS é composto por: Princípios orientadores, Governança, Cadeia de valor de serviço (SVC), Práticas e Melhoria contínua.",
+    trap: "A primeira opção lista as 6 ATIVIDADES da SVC (que é apenas um componente do SVS), não os componentes do SVS em si.",
+    trigger: "SVS = Princípios + Governança + SVC + Práticas + Melhoria Contínua."
+  },
+  {
+    id: "svc-12",
+    topic: TOPICS.SVC,
+    question: "Quais são as seis atividades da Service Value Chain (cadeia de valor de serviço)?",
+    options: [
+      "Plan, Improve, Engage, Design & Transition, Obtain/Build, Deliver & Support",
+      "Strategy, Design, Transition, Operation, Improvement, Governance",
+      "Identify, Assess, Approve, Build, Test, Release",
+      "Plan, Support, Engage, Design, Obtain, Review"
+    ],
+    correct: 0,
+    explanation: "As 6 atividades da SVC são: Plan (planejar), Improve (melhorar), Engage (engajar), Design & Transition, Obtain/Build e Deliver & Support.",
+    trap: "Strategy/Design/Transition/Operation é o lifecycle do ITIL v3 — não é a SVC do ITIL 4. Cuidado com essa armadilha clássica.",
+    trigger: "SVC: Plan · Improve · Engage · Design&T · Obtain/Build · Deliver&S."
+  },
+  {
+    id: "svc-13",
+    topic: TOPICS.SVC,
+    question: "Value streams (fluxos de valor) devem:",
+    options: [
+      "Nunca ser alterados após a implementação inicial",
+      "Ser melhorados apenas quando um problema crítico surgir",
+      "Ser continuamente melhorados para eliminar desperdícios e aumentar a entrega de valor",
+      "Nunca ser submetidos a processos de melhoria"
+    ],
+    correct: 2,
+    explanation: "A melhoria contínua se aplica também aos value streams: eles devem ser periodicamente revisados e otimizados para entregar mais valor com menos desperdício.",
+    trap: "Esperar um problema para melhorar é reativo; o ITIL 4 defende melhoria CONTÍNUA e proativa dos fluxos de valor.",
+    trigger: "Value streams = melhoria contínua (sempre, não só quando há problema)."
+  },
+  {
+    id: "svc-14",
+    topic: TOPICS.SVC,
+    question: "Cada prática do ITIL 4 em relação às atividades da SVC:",
+    options: [
+      "Se associa a uma única atividade da SVC, exclusivamente",
+      "Deve ter uma atividade da SVC dedicada para ela",
+      "Não tem influência sobre as atividades da SVC",
+      "Pode suportar múltiplas atividades da SVC simultaneamente"
+    ],
+    correct: 3,
+    explanation: "As práticas são transversais: uma única prática pode contribuir para várias atividades da SVC, conforme o contexto e a necessidade.",
+    trap: "Não há mapeamento 1-para-1 fixo entre prática e atividade. A combinação é flexível e orientada ao cenário.",
+    trigger: "Prática ↔ SVC: uma prática → múltiplas atividades."
+  },
+
+  /* -------- GUIDING PRINCIPLES -------- */
+  {
+    id: "gp-16",
+    topic: TOPICS.GP,
+    question: "Qual das seguintes NÃO é um princípio orientador do ITIL 4?",
+    options: [
+      "Foco no valor",
+      "Comece onde está",
+      "Adote mentalidade ágil",
+      "Progrida iterativamente com feedback"
+    ],
+    correct: 2,
+    explanation: "'Adote mentalidade ágil' não é um dos 7 princípios orientadores do ITIL 4. Os sete são: Foco no valor; Comece onde está; Progrida iterativamente com feedback; Colabore e promova visibilidade; Pense e trabalhe holisticamente; Mantenha simples e prático; Otimize e automatize.",
+    trap: "Agilidade é um valor importante no contexto ITIL, mas não é um dos 7 princípios orientadores em si.",
+    trigger: "7 princípios: memorize a lista — 'adote mentalidade ágil' não está nela."
+  },
+  {
+    id: "gp-17",
+    topic: TOPICS.GP,
+    question: "O princípio 'Otimize e automatize' orienta que:",
+    options: [
+      "Deve-se simplificar e otimizar os processos antes de automatizá-los",
+      "A automação deve preceder sempre a otimização",
+      "Todo processo deve ser completamente automatizado",
+      "As dificuldades mais complexas devem ser automatizadas primeiro"
+    ],
+    correct: 0,
+    explanation: "A ordem correta é: primeiro otimizar (eliminar desperdício, simplificar), depois automatizar. Automatizar um processo ruim apenas o torna mais rápido em errar.",
+    trap: "A tentação é automatizar tudo rapidamente. Mas o ITIL 4 é claro: otimize ANTES. Automatizar a bagunça mantém a bagunça.",
+    trigger: "Otimize PRIMEIRO → automatize DEPOIS (nunca o contrário)."
+  },
+
+  /* -------- FOUR DIMENSIONS -------- */
+  {
+    id: "dim-12",
+    topic: TOPICS.DIM,
+    question: "Quais fatores externos afetam todas as quatro dimensões do gerenciamento de serviços?",
+    options: [
+      "Posicional, equitativo, psicológico e comportamental",
+      "Político, econômico, social, tecnológico, legal e ambiental (PESTLE)",
+      "Prático, ergonômico, sistêmico e cultural",
+      "Problemático, econômico, social e tecnológico"
+    ],
+    correct: 1,
+    explanation: "O ITIL 4 utiliza o modelo PESTLE para descrever os fatores externos (político, econômico, social, tecnológico, legal e ambiental) que afetam todas as quatro dimensões.",
+    trap: "PESTLE é uma sigla: Political, Economic, Social, Technological, Legal, Environmental. Não confunda com SWOT ou outras análises.",
+    trigger: "Fatores externos = PESTLE (6 fatores, afetam todas as dimensões)."
+  },
+  {
+    id: "dim-13",
+    topic: TOPICS.DIM,
+    question: "Quais são as dimensões corretas do gerenciamento de serviços no ITIL 4?",
+    options: [
+      "Informação e Pessoas; Informação e Tecnologia",
+      "Informação e Tecnologia; Valor e Pessoas",
+      "Informação e Pessoas; Valor e Processos",
+      "Informação e Tecnologia; Fluxos de Valor e Processos"
+    ],
+    correct: 3,
+    explanation: "As quatro dimensões do ITIL 4 são: Organizações e Pessoas; Informação e Tecnologia; Parceiros e Fornecedores; Fluxos de Valor e Processos.",
+    trap: "Não existe dimensão 'Valor e Pessoas' ou 'Informação e Pessoas' no ITIL 4. As dimensões corretas envolvem 'Informação E Tecnologia' e 'Fluxos de Valor E Processos'.",
+    trigger: "4D: Org/Pessoas · Info/Tech · Parceiros/Fornec · Fluxos/Processos."
+  },
+
+  /* -------- CONTINUAL IMPROVEMENT -------- */
+  {
+    id: "ci-10",
+    topic: TOPICS.CI,
+    question: "Sobre a melhoria contínua no ITIL 4, qual é a afirmação correta?",
+    options: [
+      "Deve estar incorporada em todos os papéis, equipes e práticas da organização",
+      "Deve ser responsabilidade de uma única equipe dedicada",
+      "Deve ser responsabilidade de uma única pessoa designada",
+      "Deve ser aplicada por meio de uma única técnica padronizada"
+    ],
+    correct: 0,
+    explanation: "A melhoria contínua é responsabilidade de todos na organização — todos os papéis e equipes devem contribuir para a cultura de melhoria, não apenas um time isolado.",
+    trap: "Pode existir uma equipe ou responsável dedicado à coordenação, mas isso não isenta os demais. A melhoria é de TODOS.",
+    trigger: "Melhoria contínua = responsabilidade de TODOS (não de um time)."
+  },
+
+  /* -------- SLA / MÉTRICAS -------- */
+  {
+    id: "sla-10",
+    topic: TOPICS.SLA,
+    question: "Com que frequência devem ser realizadas as revisões de serviço (service reviews) entre provedor e cliente?",
+    options: [
+      "Anualmente, conforme ciclo fiscal",
+      "Semestralmente, a cada 6 meses",
+      "Trimestralmente, a cada 3 meses",
+      "Regularmente, conforme acordado entre as partes"
+    ],
+    correct: 3,
+    explanation: "O ITIL 4 não prescreve um período fixo: as revisões de serviço devem ocorrer regularmente, na frequência acordada entre provedor e cliente conforme as necessidades do negócio.",
+    trap: "Prescrever um período fixo (anual, trimestral) é o erro: a resposta certa é 'regular', pois a frequência varia conforme o contexto.",
+    trigger: "Service review = regular (frequência acordada, não prescrita)."
   }
 ];
 
