@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#3a36c4" />
+  <title>Treinador ITIL 4 Foundation</title>
+  <meta name="description" content="App de estudo de ITIL 4 Foundation com perguntas originais, correção honesta e repetição de erros." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- Barra superior -->
+    <header class="topbar">
+      <div>
+        <h1>Treinador ITIL 4</h1>
+        <span class="sub">Foundation · correção honesta</span>
+      </div>
+      <button class="link-btn" id="nav-stats" type="button">Estatísticas</button>
+    </header>
+
+    <!-- ============================ TELA: INÍCIO ============================ -->
+    <section id="screen-home" class="screen active">
+      <div class="card">
+        <h2>Estude em blocos de 10</h2>
+        <p class="muted">Perguntas originais por tópico oficial. A cada resposta você vê o veredito, a explicação, a pegadinha e o gatilho de memorização. Sem suavizar erro.</p>
+        <button class="btn" id="btn-start" type="button">Novo bloco de 10</button>
+        <button class="btn secondary" id="btn-review" type="button">Revisar meus erros</button>
+      </div>
+
+      <div class="card" id="home-summary">
+        <h2>Seu progresso</h2>
+        <div class="stat-grid">
+          <div class="stat"><div class="n" id="hs-blocks">0</div><div class="l">Blocos feitos</div></div>
+          <div class="stat"><div class="n" id="hs-rate">—</div><div class="l">Taxa de acerto</div></div>
+        </div>
+        <p class="muted" id="hs-weak">Sem dados ainda. Faça um bloco para começar.</p>
+      </div>
+    </section>
+
+    <!-- ============================= TELA: QUIZ ============================= -->
+    <section id="screen-quiz" class="screen">
+      <div class="quiz-head">
+        <span class="counter" id="q-counter">1 / 10</span>
+        <span class="topic-badge" id="q-topic">Tópico</span>
+      </div>
+      <div class="progress"><div id="q-progress"></div></div>
+
+      <p class="question" id="q-text">Pergunta…</p>
+      <ul class="options" id="q-options"></ul>
+
+      <!-- Painel de feedback (preenchido via JS após responder) -->
+      <div class="feedback" id="q-feedback" hidden></div>
+
+      <button class="btn" id="btn-next" type="button" hidden>Próxima</button>
+    </section>
+
+    <!-- =========================== TELA: RESULTADOS ========================= -->
+    <section id="screen-results" class="screen">
+      <div class="score">
+        <div class="box ok"><div class="n" id="r-correct">0</div><div class="l">Acertos</div></div>
+        <div class="box bad"><div class="n" id="r-wrong">0</div><div class="l">Erros</div></div>
+      </div>
+
+      <div class="card">
+        <h2 id="r-headline">Resultado do bloco</h2>
+        <p class="muted" id="r-message"></p>
+      </div>
+
+      <h2 id="r-wrong-title" style="font-size:16px;margin:18px 2px 10px;">Suas questões erradas</h2>
+      <div id="r-wrong-list"></div>
+
+      <button class="btn" id="btn-email" type="button">Enviar erros por e-mail</button>
+      <button class="btn secondary" id="btn-copy" type="button">Copiar erros</button>
+      <button class="btn secondary" id="btn-newblock" type="button">Novo bloco de 10</button>
+      <button class="btn ghost" id="btn-home" type="button">Voltar ao início</button>
+      <p class="hint">
+        O botão de e-mail abre seu app de e-mail padrão via <code>mailto:</code>. Alguns clientes cortam mensagens muito longas — se isso acontecer, use “Copiar erros” e cole no e-mail.
+      </p>
+    </section>
+
+    <!-- =========================== TELA: ESTATÍSTICAS ====================== -->
+    <section id="screen-stats" class="screen">
+      <div class="stat-grid">
+        <div class="stat"><div class="n" id="st-correct">0</div><div class="l">Acertos totais</div></div>
+        <div class="stat"><div class="n" id="st-wrong">0</div><div class="l">Erros totais</div></div>
+        <div class="stat"><div class="n" id="st-rate">—</div><div class="l">Percentual geral</div></div>
+        <div class="stat"><div class="n" id="st-blocks">0</div><div class="l">Blocos feitos</div></div>
+      </div>
+
+      <div class="card">
+        <h2>Tópicos mais fracos</h2>
+        <div id="st-weak"></div>
+      </div>
+
+      <button class="btn secondary" id="btn-back" type="button">Voltar</button>
+      <button class="btn ghost" id="btn-reset" type="button">Apagar todo o progresso</button>
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- Banco de perguntas primeiro, depois a lógica -->
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
